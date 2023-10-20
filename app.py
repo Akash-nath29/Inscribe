@@ -53,5 +53,16 @@ def delete(id):
     db.session.commit()
     return redirect('/')
 
+@app.route('/<int:id>/edit', methods=['GET', 'POST'])
+def edit(id):
+    note = Note.query.get(id)
+    if request.method == 'POST':
+        note.notesName = request.form.get('notesName')
+        note.notesContent = request.form.get('notesContent')
+        db.session.commit()
+        return redirect('/')
+    return render_template('editNotes.html', note=note)
+
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port='80')

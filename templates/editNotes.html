@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Inscribe: Create Note{% endblock %}
+{% block body %}
+<center><h2>Edit Notes</h2></center>
+<form method="post">
+    <input type="text" name="notesName" id="notesName" placeholder="Notes Name" autocomplete="off" value="{{note.notesName}}">
+    <textarea name="notesContent" id="notesContent" cols="30" rows="10" placeholder="Notes Content">{{note.notesContent}}</textarea>
+    <input type="submit" value="Update">
+</form>
+{% endblock %}
