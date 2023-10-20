@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Inscribe: Home{% endblock %}
+{% block body %}
+<center>
+    <h2>Your Notes</h2>
+</center>
+{% if notes %}
+{% for note in notes %}
+<a id="viewNotesLink" href="{{url_for('viewNote', id=note.id)}}">
+    <div class="notes">
+        <h2>{{note.notesName}}</h2>
+        <span>{{note.created_at}}</span>
+    </div>
+</a>
+{% endfor %}
+{% else %}
+<center>
+    <h1 id="noNotesNotification">No Notes Available</h1>
+</center>
+{% endif %}
+{% endblock %}

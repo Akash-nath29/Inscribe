@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Inscribe: Create Note{% endblock %}
+{% block body %}
+<center><h2>Create Notes</h2></center>
+<form action="/create" method="post">
+    <input type="text" name="notesName" id="notesName" placeholder="Notes Name">
+    <textarea name="notesContent" id="notesContent" cols="30" rows="10" placeholder="Notes Content"></textarea>
+    <input type="submit" value="Save">
+</form>
+{% endblock %}

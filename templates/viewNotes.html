@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Inscribe: View Note{% endblock %}
+{% block body %}
+
+<h1>{{note.notesName}}</h1>
+<span>{{note.created_at}}</span>
+<p style="margin: 5vh 0;">{{note.notesContent}}</p>
+
+<a id="deleteNoteBtn" href="{{url_for('delete', id=note.id)}}">Delete Note</a>
+
+{% endblock %}
