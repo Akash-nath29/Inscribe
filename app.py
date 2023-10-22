@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import desc
 import os
 import datetime
 
@@ -27,7 +28,7 @@ class Note(db.Model):
 
 @app.route('/')
 def index():
-    notes = Note.query.all()
+    notes = Note.query.order_by(desc(Note.created_at)).all()
     return render_template('index.html', notes=notes)
 
 @app.route('/create', methods=['GET', 'POST'])
