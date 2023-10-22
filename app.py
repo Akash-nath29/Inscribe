@@ -23,7 +23,7 @@ class Note(db.Model):
     def __init__(self, notesName, notesContent):
         self.notesName = notesName
         self.notesContent = notesContent
-        self.created_at = datetime.datetime.utcnow()
+        self.created_at = datetime.datetime.now()
 
 @app.route('/')
 def index():

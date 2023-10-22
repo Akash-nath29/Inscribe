@@ -16,13 +16,14 @@
 </a>
 <h1>{{note.notesName}}</h1>
 <span>{{note.created_at}}</span>
-<p style="margin: 5vh 0;">{{note.notesContent}}</p>
+<p style="margin: 5vh 0;">{{note.notesContent|safe}}</p>
 
 <a id="editBtn" href="{{ url_for('edit', id=note.id) }}">
     <span id="btn"><svg id="editIcon" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
             <style>
                 #editIcon {
-                    fill: #ffffff
+                    fill: #ffffff;
+                    margin-right: 1vw;
                 }
             </style>
             <path
@@ -34,7 +35,8 @@
     <span id="btn"><svg id="dltIcon" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
             <style>
                 #dltIcon {
-                    fill: #ffffff
+                    fill: #ffffff;
+                    margin-right: 1vw;
                 }
             </style>
             <path

@@ -30,6 +30,7 @@
     cursor: pointer;
     text-decoration: none;
     color: black;
+    border-radius: 5px;
 }
 .navbar a:hover {
     background-color: aliceblue;
