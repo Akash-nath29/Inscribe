@@ -12,7 +12,7 @@
     width: 100%;
 }
 .navbar {
-    width: 20vw;
+    width: 25vw;
     /* background-color: #ff0000; */
     border-right: 1px solid #696969;
     height: 90vh;
@@ -35,6 +35,11 @@
 .navbar a:hover {
     background-color: aliceblue;
 }
+.menuBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .logo {
     border-bottom: 1px solid #696969;
     padding: 2vh;
@@ -47,6 +52,13 @@
 }
 
 #noNotesNotification {
+    position: absolute;
+    top: 50%;
+    left: 59%;
+    transform: translate(-50%, -50%);
+    color: #696969;
+}
+#noTasksNotification {
     position: absolute;
     top: 50%;
     left: 59%;
@@ -129,6 +141,51 @@ form input[type=submit]{
     align-items: center;
     padding: 8px 20px;
     border-radius: 5px;
+}
+#siteIcon {
+    width: 100px;
+}
+
+#homeStartBtn {
+    color: white;
+    background-color: rgb(0, 76, 255);
+    padding: 8px 20px;
+    text-decoration: none;
+    border-radius: 10px;
+    margin: 5vh 0;
+}
+
+#createMenuBar {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: 0.4s;
+}
+#createMenuBar a {
+    padding: 2vh;
+}
+
+ul li {
+    margin: 2vh 0;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #494949;
+    padding: 2vh;
+}
+
+#doneBtn {
+    margin-left: 3vw;
+    background-color: rgb(28, 28, 255);
+    color: white;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+
+ul li a {
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
 }
 
 @media screen and (max-width: 800px) {

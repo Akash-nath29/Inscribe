@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
-{% block title %}Inscribe: Create Note{% endblock %}
+{% block title %}Inscribe: Edit Tasks{% endblock %}
 {% block body %}
-<a id="goBackBtn" href="/notes">
+<a id="goBackBtn" href="/tasks">
     <span id="btn"><svg id="backToBtn" xmlns="http://www.w3.org/2000/svg" height="1.3em" viewBox="0 0 320 512">
             <style>
                 #backToBtn {
@@ -14,10 +14,10 @@
         </svg>
         Go Back</span>
 </a>
-<center><h2>Create Notes</h2></center>
-<form action="/createNotes" method="post">
-    <input type="text" name="notesName" id="notesName" placeholder="Notes Name" autocomplete="off">
-    <textarea name="notesContent" id="notesContent" cols="30" rows="10" placeholder="Notes Content"></textarea>
-    <input type="submit" value="Save">
+<center><h2>Edit Tasks</h2></center>
+<form method="post">
+    <input type="text" name="taskName" id="taskName" placeholder="Task Name" autocomplete="off" value="{{task.taskName}}">
+    <textarea name="taskDescription" id="taskDescription" cols="30" rows="10" placeholder="task Description">{{task.taskDescription}}</textarea>
+    <input type="submit" value="Update">
 </form>
 {% endblock %}
