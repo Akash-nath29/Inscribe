@@ -11,14 +11,18 @@
 
 <!-- Add a screenshot or GIF of your app if possible -->
 
-## Features
+## Disclaimer ⚠️
+
+- This project is under Development. Don't use it for professional purposes.
+
+## Features ✨
 
 - ✍️ Create, edit, and delete notes.
 - 📂 Organize your notes efficiently.
 - 🔄 Access and rewatch your notes anytime.
 - 💾 Persistent storage using Flask-SQLAlchemy.
 
-## Installation
+## Installation 🚀
 
 1. Clone the repository:
    ```bash
@@ -34,7 +38,7 @@
    ```
 4. Open your web browser and go to `http://127.0.0.1:80` to access Inscribe.
 
-## Contributing
+## Contributing 🤝
 
 🎉 Contributions are welcome! Here's how you can get involved:
 
@@ -55,11 +59,11 @@
 
 For major changes, please open an issue first to discuss what you would like to change.
 
-## License
+## License 📝
 
 This project is licensed under the [MIT License](https://github.com/Akash-nath29/Inscribe/blob/main/LICENSE).
 
-## Contact
+## Contact ☎️
 
 👤 **Akash Nath**
 - GitHub: [@Akash-nath29](https://github.com/Akash-nath29)
