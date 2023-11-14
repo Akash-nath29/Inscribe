@@ -7,6 +7,9 @@
   <img src="https://img.shields.io/github/languages/top/Akash-nath29/Inscribe?style=for-the-badge" alt="GitHub top language" />
 </p>
 
+<!-- <img src="https://github.com/Akash-nath29/Inscribe/blob/main/static/img/demoImages/notesPage.png" width="300"> -->
+![Noes Page](https://github.com/Akash-nath29/Inscribe/blob/main/static/img/demoImages/notesPage.png)
+
 <p align="center">A vibrant online notes-taking application made with Flask and Flask-SQLAlchemy. Take notes, revisit them later, and organize your thoughts effortlessly!</p>
 
 <!-- Add a screenshot or GIF of your app if possible -->
@@ -37,6 +40,8 @@
    python app.py
    ```
 4. Open your web browser and go to `http://127.0.0.1:80` to access Inscribe.
+
+![Task Page](https://github.com/Akash-nath29/Inscribe/blob/main/static/img/demoImages/taskPage.png)
 
 ## Contributing 🤝
 
