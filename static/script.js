@@ -11,3 +11,20 @@ function openMenuBar(){
         menuBar.style.maxHeight = "0px";
     }
 }
+
+let elementBg = document.querySelectorAll('div');
+let darkOrNot = false;
+function changeTheme(){
+    if (darkOrNot == false){
+        elementBg.forEach(element => {
+            element.classList.add('dark');
+        });
+        darkOrNot = true;
+    }
+    else {
+        elementBg.forEach(element => {
+            element.classList.remove('dark');
+        });
+        darkOrNot = false;
+    }
+}
