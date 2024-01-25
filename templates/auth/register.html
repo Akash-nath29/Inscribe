@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link rel="website icon" type="image/png" href="{{url_for('static', filename='img/favicon.png')}}">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .registration-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+        }
+
+        .registration-header {
+            background-color: #2ecc71;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .registration-body {
+            padding: 20px;
+        }
+
+        .registration-body input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .password-container {
+            position: relative;
+        }
+
+        .password-input {
+            width: 85%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .reveal-password-btn {
+            margin: 1vh 0;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+        }
+
+        .registration-body button {
+            width: 100%;
+            padding: 10px;
+            background-color: #2ecc71;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .registration-body button:hover {
+            background-color: #27ae60;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="registration-container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <ul>
+            {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        <div class="registration-header">
+            <h2>Register</h2>
+        </div>
+        <div class="registration-body">
+            <form action="/register" method="post">
+                <input type="text" placeholder="Username" required name="username">
+                <input type="email" placeholder="Email" required name="email">
+
+                <div class="password-container">
+                    <input class="password-input" type="password" id="password" placeholder="Password" required name="password">
+                </div>
+
+                <input type="password" placeholder="Confirm Password" required name="confirm_password">
+                <button type="button" class="reveal-password-btn"
+                    onclick="togglePasswordVisibility('password')">👁️</button>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function togglePasswordVisibility(passwordFieldId) {
+            const passwordField = document.getElementById(passwordFieldId);
+            passwordField.type = passwordField.type === "password" ? "text" : "password";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,16 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+
 .container {
     display: flex;
     justify-content: center;
     height: 90vh;
     width: 100%;
 }
+
 .navbar {
     width: 25vw;
     /* background-color: #ff0000; */
@@ -32,20 +35,24 @@
     color: black;
     border-radius: 5px;
 }
+
 .navbar a:hover {
     background-color: aliceblue;
 }
+
 .menuBar {
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 .logo {
     border-bottom: 1px solid #696969;
     padding: 2vh;
     display: flex;
     align-items: center;
 }
+
 .main {
     width: 100%;
     padding: 5vh;
@@ -58,6 +65,7 @@
     transform: translate(-50%, -50%);
     color: #696969;
 }
+
 #noTasksNotification {
     position: absolute;
     top: 50%;
@@ -65,6 +73,7 @@
     transform: translate(-50%, -50%);
     color: #696969;
 }
+
 form {
     display: flex;
     flex-direction: column;
@@ -73,7 +82,9 @@ form {
     width: 100%;
     /* background-color: #000; */
 }
-form input, textarea {
+
+form input,
+textarea {
     width: 80%;
     font-size: 20px;
     border: none;
@@ -83,10 +94,12 @@ form input, textarea {
     padding: 8px 20px;
     caret-color: black;
 }
+
 form textarea {
     resize: none;
 }
-form input[type=submit]{
+
+form input[type=submit] {
     width: auto;
     background-color: rgb(73, 73, 255);
     border-radius: 10%;
@@ -95,6 +108,7 @@ form input[type=submit]{
     outline: none;
     cursor: pointer;
 }
+
 .notes {
     display: flex;
     flex-direction: column;
@@ -103,10 +117,12 @@ form input[type=submit]{
     padding: 2vh;
     border: 1px solid #b1b1b1;
 }
+
 #viewNotesLink {
     text-decoration: none;
     color: black;
 }
+
 #deleteNoteBtn {
     background-color: red;
     color: white;
@@ -115,6 +131,7 @@ form input[type=submit]{
     border-radius: 10px;
     margin: 1vh;
 }
+
 #editBtn {
     background-color: green;
     color: white;
@@ -123,6 +140,7 @@ form input[type=submit]{
     border-radius: 10px;
     margin: 1vh;
 }
+
 #goBackBtn {
     color: #494949;
     padding: 8px 20px;
@@ -142,6 +160,7 @@ form input[type=submit]{
     padding: 8px 20px;
     border-radius: 5px;
 }
+
 #siteIcon {
     width: 100px;
 }
@@ -162,6 +181,7 @@ form input[type=submit]{
     overflow: hidden;
     transition: 0.4s;
 }
+
 #createMenuBar a {
     padding: 2vh;
 }
@@ -221,6 +241,7 @@ ul li a {
 .left h2 {
     margin-top: 2vh;
 }
+
 .right {
     width: 45%;
     height: 50vh;
@@ -234,14 +255,69 @@ ul li a {
     color: white;
 }
 
+#hamburgerIcon {
+    display: none;
+}
+
 @media screen and (max-width: 800px) {
-    .navbar {
-        width: 50vw;
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
-    .navbar a{
+
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        border: none;
+        z-index: 1;
+        /* overflow-y: scroll; */
+        overflow: hidden;
+        transition: 0.4s;
+        margin: 0;
+    }
+
+    .navbar a {
         padding: 5px;
     }
-    form input, textarea {
+
+    form input,
+    textarea {
         font-size: 13px;
+    }
+
+    .menuBar {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        border: 1pz solid black;
+    }
+
+    .navbar a {
+        padding: 8px;
+        margin: 1vh 0;
+    }
+
+    #createMenuBar {
+        /* display: block; */
+        border: 1pz solid black;
+        width: 100%;
+        /* max-height: 200px; */
+        display: flex;
+        flex-direction: column;
+    }
+
+    #createMenuBar a {
+        padding: 2vh;
+    }
+    #hamburger {
+        margin-left: 50vw;
+    }
+    #hamburgerIcon {
+        display: block;
     }
 }
