@@ -72,7 +72,7 @@ This project is licensed under the [MIT License](https://github.com/Akash-nath29
 
 👤 **Akash Nath**
 - GitHub: [@Akash-nath29](https://github.com/Akash-nath29)
-- Email: devakash@noteswallah.is-a.dev
+- Email: [devakash@noteswallah.is-a.dev](devakash@noteswallah.is-a.dev)
 
 Feel free to reach out with any questions or feedback!
 
