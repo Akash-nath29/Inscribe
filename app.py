@@ -139,7 +139,8 @@ def index():
 
 @app.route('/notes')
 def notes():
-    notes = Note.query.order_by(desc(Note.created_at)).all()
+    # notes = Note.query.order_by(desc(Note.created_at)).all()
+    notes = Note.query.filter_by(user_id=session['user_id']).order_by(desc(Note.created_at)).all()
     return render_template('notes.html', notes=notes)
 
 @app.route('/tasks')
