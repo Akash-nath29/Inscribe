@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Inscribe{% endblock %}</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
     <style>
         h1 {
             font-size: 80px;
         }
     </style>
-    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
     <link rel="website icon" type="image/png" href="{{url_for('static', filename='img/favicon.png')}}">
 </head>
 
@@ -32,7 +32,6 @@
     </div>
     <div class="container">
         <div class="navbar">
-
             <a href="{{url_for('login')}}"><span id="navItem"><svg xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 512 512" height="1em" style="margin-right: 3vw;">
                         <path fill="#696969"
@@ -45,7 +44,7 @@
                     </svg>Register</span></a>
         </div>
         <div class="main">
-            <span style="display: flex; align-items: center; justify-content: space-evenly;">
+            <span id="mainSpan">
                 <img src="{{url_for('static', filename='img/penIcon.png')}}" alt="Main Image">
                 <div class="texts">
                     <h1>Inscribe</h1>
@@ -55,6 +54,20 @@
         </div>
     </div>
     <script src="{{url_for('static', filename='script.js')}}"></script>
+    <script>
+        let hamburgerIcon = document.querySelector('#hamburger');
+        let nav = document.querySelector('.navbar');
+        nav.style.maxHeight = "0px";
+        function openNav() {
+            if (nav.style.maxHeight == '0px') {
+                // nav.style.maxHeight = '2vh';
+                nav.style.maxHeight = '50vh';
+            }
+            else {
+                nav.style.maxHeight = '0px';
+            }
+        }
+    </script>
 </body>
 
 </html>

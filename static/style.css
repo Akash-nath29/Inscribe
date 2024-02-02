@@ -48,9 +48,10 @@
 
 .logo {
     border-bottom: 1px solid #696969;
-    padding: 2vh;
+    padding: 8px 20px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .main {
@@ -259,12 +260,26 @@ ul li a {
     display: none;
 }
 
+#mainSpan {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
 @media screen and (max-width: 800px) {
+    .main span {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
     .container {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        height: auto;
     }
 
     .navbar {
@@ -278,7 +293,10 @@ ul li a {
         /* overflow-y: scroll; */
         overflow: hidden;
         transition: 0.4s;
+        transform-origin: 0%;
         margin: 0;
+        /* height: 0vh; */
+        /* padding: 8px 0; */
     }
 
     .navbar a {
@@ -313,10 +331,13 @@ ul li a {
 
     #createMenuBar a {
         padding: 2vh;
+        margin: 0;
     }
+
     #hamburger {
         margin-left: 50vw;
     }
+
     #hamburgerIcon {
         display: block;
     }
