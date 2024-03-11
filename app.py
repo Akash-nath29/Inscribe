@@ -135,7 +135,10 @@ def logout():
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    if 'user_id' not in session:
+        flash("You are not logged in", 'error')
+        return redirect('/login')
+    return render_template('notes.html')
 
 @app.route('/notes')
 def notes():
