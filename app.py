@@ -11,8 +11,8 @@ from flask_admin.contrib.sqla import ModelView
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] =\
-        'sqlite:///' + os.path.join(basedir, 'database.db')
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://akash_nath29:8LYkOQm7Q9aVTSf9X57S6ml1eaZzXpKW@dpg-cnnitv5jm4es73c29mgg-a.singapore-postgres.render.com/inscribe'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SESSION_TYPE'] = 'filesystem'
 app.config['SECRET_KEY'] = 'MLXH243rjBDIBibiBIbibIUBImmfrdTWS7FDhdwYF56wPj8'
@@ -24,9 +24,9 @@ db = SQLAlchemy(app)
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.Text(100), unique=True)
-    email = db.Column(db.Text(100), unique=True)
-    password = db.Column(db.Text(100))
+    username = db.Column(db.String(100), unique=True, nullable=False)
+    email = db.Column(db.String(100), unique=True, nullable=False)
+    password = db.Column(db.String(100), nullable=False)
     notes = db.relationship('Note', backref='author', lazy=True)
     tasks = db.relationship('Task', backref='author', lazy=True)
 
@@ -47,7 +47,7 @@ class Note(db.Model):
 class Task(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     taskName = db.Column(db.String(100), nullable=False)
-    taskDescription = db.Column(db.Text(1000), nullable=True)
+    taskDescription = db.Column(db.Text, nullable=True)
     created_at = db.Column(db.DateTime())
     is_completed = db.Column(db.Boolean, default=False, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
